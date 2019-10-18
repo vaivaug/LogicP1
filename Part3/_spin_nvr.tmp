@@ -1,0 +1,11 @@
+never p {    /* !([] ((! ((y!=x))) || (<> ((y==x))))) */
+T0_init:
+	do
+	:: (! ((! ((y!=x)))) && ! (((y==x)))) -> goto accept_S4
+	:: (1) -> goto T0_init
+	od;
+accept_S4:
+	do
+	:: (! (((y==x)))) -> goto accept_S4
+	od;
+}
